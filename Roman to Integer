@@ -1,0 +1,16 @@
+class Solution:
+    def romanToInt(self, s: str) -> int:
+        word = s
+        roman = {"I":1, "V":5, "X":10, "L":50, "C":100, "D":500, "M":1000}
+        sums = 0
+
+        word = word.replace("IV", "IIII")
+        word = word.replace("IX", "VIIII")
+        word = word.replace("XL", "XXXX")
+        word = word.replace("XC", "LXXXX")
+        word = word.replace("CD", "CCCC")
+        word = word.replace("CM", "DCCCC")
+       
+        for i in range(0, len(word)):
+            sums = sums+roman[word[i]]
+        return sums

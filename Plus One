@@ -1,0 +1,16 @@
+class Solution:
+    def plusOne(self, digits: list[int]) -> list[int]:
+
+        full_word = ""
+
+        for k in digits:
+            full_word = full_word+str(k)
+        
+        convert = str(int(full_word)+1)
+
+        final = []
+
+        for i in range(0, len(convert)):
+            final.append(int(convert[i]))
+            
+        return final

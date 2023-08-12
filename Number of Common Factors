@@ -1,0 +1,29 @@
+class Solution:
+    def commonFactors(self, a: int, b: int) -> int:
+        
+        comman_a = [] # [1, 2, 3, 4, 6, 12]
+        
+        for i in range(1, a+1):
+            if a%i == 0:
+                comman_a.append(i)
+        
+        comman_b = [] # [1 ,2, 3, 6]
+        
+        for j in range(1, b+1):
+            if b%j == 0:
+                comman_b.append(j)
+                
+        set_comman_a = set(comman_a)
+        set_comman_b = set(comman_b)
+        
+        max_lenght_list = max(len(comman_a), len(comman_b))
+        
+        if max_lenght_list == len(comman_a):
+            inter = set_comman_a.intersection(set_comman_b)
+        if max_lenght_list == len(comman_b):
+            inter = set_comman_b.intersection(set_comman_a)
+        else:
+            inter = set_comman_a.intersection(set_comman_b)
+        
+        return len(inter)
+        

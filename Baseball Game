@@ -1,0 +1,27 @@
+class Solution:
+    def calPoints(self, operations: list[str]) -> int:
+
+        num = operations
+
+        ops = []
+
+        for i in range(0, len(num)):
+            if num[i].isnumeric() == True:
+                ops.append(int(num[i]))
+
+            if num[i][0] == "-":
+                ops.append(int(num[i]))
+
+            if num[i] == "C":
+                ops.pop()
+
+            if num[i] == "D":
+                ops.append(int(ops[-1])*2)
+
+            if num[i] == "+":
+                last_1 = ops[-1]
+                last_2 = ops[-2]
+                sumss = last_2+last_1
+                ops.append(sumss)
+
+        return sum(ops)

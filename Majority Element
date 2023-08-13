@@ -1,0 +1,12 @@
+class Solution:
+    def majorityElement(self, nums: list[int]) -> int:
+        n = nums
+        n_unique = set(n)
+        val_count = {}
+
+        for i in n_unique:
+            val_count[i] = n.count(i)
+            
+        Keymax = max(zip(val_count.values(), val_count.keys()))[1]
+
+        return Keymax

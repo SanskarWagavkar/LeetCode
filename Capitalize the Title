@@ -1,0 +1,16 @@
+class Solution:
+    def capitalizeTitle(self, title: str) -> str:
+
+        list_s = list(map(str, title.split(" ")))
+        
+        final_list = []
+
+        for i in list_s:
+            if len(i) == 1 or len(i) == 2:
+                final_list.append(i.lower())
+            else:
+                final_list.append(i.capitalize())
+            
+        str_final = " ".join(final_list)
+        
+        return str_final

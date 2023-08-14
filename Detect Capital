@@ -1,0 +1,11 @@
+class Solution:
+    def detectCapitalUse(self, word: str) -> bool:
+
+        x = word.capitalize()
+
+        if word.isupper() == True or word.islower() == True or word == x:
+            return True
+        else:
+            return False
+
+        

@@ -1,0 +1,10 @@
+class Solution:
+    def singleNumber(self, nums: List[int]) -> List[int]:
+        
+        once = []
+        
+        for i in range(0, len(nums)):
+            if nums.count(nums[i]) == 1:
+                once.append(nums[i])
+
+        return once

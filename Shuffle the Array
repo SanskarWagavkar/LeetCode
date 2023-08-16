@@ -1,0 +1,16 @@
+class Solution:
+    def shuffle(self, nums: list[int], n: int) -> list[int]:
+        num_1 = [] 
+        num_2 = []
+        
+        lenght = len(nums)/2
+        num_1.append(nums[0:int(lenght)])
+        num_2.append(nums[int(lenght):])
+        
+        final = []
+        
+        for i in range(0, n):
+            final.append(num_1[0][i])
+            final.append(num_2[0][i])
+        
+        return final

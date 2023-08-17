@@ -1,0 +1,9 @@
+class Solution:
+    def isPowerOfThree(self, n: int) -> bool:
+        three_power = []
+        for i in range(0, 31):
+            three_power.append(3**i)
+        if n in three_power:
+            return True
+        else:
+            return False

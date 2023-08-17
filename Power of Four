@@ -1,0 +1,9 @@
+class Solution:
+    def isPowerOfFour(self, n: int) -> bool:
+        four_power = []
+        for i in range(0, 31):
+            four_power.append(4**i)
+        if n in four_power:
+            return True
+        else:
+            return False

@@ -1,0 +1,16 @@
+class Solution:
+    def toGoatLatin(self, sentence: str) -> str:
+        list_str = sentence.split(" ")
+        word = []
+        count = 1
+        for i in list_str:
+            if i[0] in ["a","e","i","o","u"] or i[0] in ["A","E","I","O","U"]:
+                word.append(f"{i}ma"+ 'a'*count)
+                count = count + 1
+            elif i[0] not in ["a", "e", "i", "o", "u"] or i[0] not in ["A", "E", "I", "O", "U"]:
+                word.append(f"{i[1:]}{i[0]}ma"+ 'a'*count)
+                count = count + 1
+                
+        word_join = " ".join(word)
+        return word_join
+            

@@ -1,0 +1,12 @@
+class Solution:
+    def sortPeople(self, names: list[str], heights: list[int]) -> list[str]:
+        people = {}
+        for i in range(0, len(names)):
+            people[heights[i]] = names[i]
+        
+        sort_dict = dict(reversed(sorted(people.items())))
+        
+        my_list = list(sort_dict.values())
+        
+        return my_list
+    

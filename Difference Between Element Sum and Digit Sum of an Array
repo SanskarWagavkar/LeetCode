@@ -1,0 +1,19 @@
+class Solution:
+    def differenceOfSum(self, nums: list[int]) -> int:
+        element_sum = sum(nums)
+        digit_sum = []
+        for i in nums:
+            if len(str(i)) > 1:
+                value = str(i)
+                for j in range(0, len(value)):
+                    digit_sum.append(value[j])
+            else:
+                digit_sum.append(i)
+        
+        for j in range(0, len(digit_sum)):
+            if type(digit_sum[j]) == str:
+                digit_sum[j] = int(digit_sum[j])
+        
+        sum_digit = sum(digit_sum)
+        
+        return element_sum-sum_digit

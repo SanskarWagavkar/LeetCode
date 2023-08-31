@@ -1,0 +1,7 @@
+unique_nums = []
+        
+        for num in nums:
+            if nums.count(num) == 1:  # Check if the count is 1 to ensure uniqueness
+                unique_nums.append(num)
+            
+        return sum(unique_nums)

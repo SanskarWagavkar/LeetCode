@@ -1,0 +1,12 @@
+class Solution:
+    def findNumbers(self, nums: List[int]) -> int:
+        count = 0
+        str_nums = []
+        for i in nums:
+            str_nums.append(str(i))
+
+        for j in str_nums:
+            if len(j)%2==0:
+                count = count+1
+
+        return count 

@@ -1,0 +1,9 @@
+class Solution:
+    def convertTemperature(self, celsius: float) -> List[float]:
+        ans = []
+        formatted_number = "{:.5f}".format(celsius+273.15)
+        ans.append(float(formatted_number))
+        formatted_number2 = "{:.5f}".format((celsius*1.80)+32.00)
+        ans.append(float(formatted_number2))
+        return ans
+        
